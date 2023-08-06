@@ -40,7 +40,7 @@
                     @endforelse
                 </tbody>
             </table>
-            {{ $posts->links() }}
+            {{ $posts->links('pagination::simple-bootstrap-5') }}
         </div>
     </div>
 @endsection

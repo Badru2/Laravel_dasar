@@ -112,7 +112,10 @@ class LoginRegisterController extends Controller
             ->withErrors([
                 'email' => 'Please login to access the dashboard.',
             ])->onlyInput('email');
+
     }
+
+
 
     /**
      * Log out the user from application.

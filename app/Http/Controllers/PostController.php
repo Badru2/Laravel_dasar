@@ -52,8 +52,8 @@ class PostController extends Controller
     {
         //validate form
         $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
-            'title' => 'required|min:5',
+            'image' => 'required|image|mimes:jpeg,jpg,png|max:8048',
+            'title' => 'required|min:2',
             'content' => 'required|min:10'
         ]);
 
@@ -69,7 +69,8 @@ class PostController extends Controller
         ]);
 
         //redirect to index
-        return redirect()->route('posts.dashboard')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('posts.dashboard')->with(['success' => 'Data Berhasil Disimpan']);
+
     }
 
     /**
@@ -148,7 +149,7 @@ class PostController extends Controller
         }
 
         //redirect to index
-        return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('posts.dashboard')->with(['success' => 'Data Berhasil Diubah!']);
     }
     /**
      * destroy
@@ -168,6 +169,6 @@ class PostController extends Controller
         $post->delete();
 
         //redirect to index
-        return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        return redirect()->route('posts.dashboard')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }
