@@ -22,8 +22,8 @@ Route::controller(LoginRegisterController::class)->group(function () {
     Route::post('/store', 'store')->name('store');
     Route::get('/login', 'login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authenticate');
+    Route::get('/dashboard', 'dashboard')->name('posts.dashboard');
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::post('/logout', 'logout')->name('logout');
+    Route::resource('/posts', \App\Http\Controllers\PostController::class);
 });
-Route::resource('/posts', \App\Http\Controllers\PostController::class);
-Route::resource('/auth', \App\Http\Controllers\PostController::class);
